@@ -1,0 +1,17 @@
+.field { display: flex; flex-direction: column; gap: var(--space-8); }
+.field label { font-size: var(--fs-body-sm); font-weight: var(--weight-medium); color: var(--gray-700); }
+.control {
+  height: 40px;
+  padding: 0 var(--space-12);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-button);
+  background: var(--white);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  outline: none;
+}
+.control:focus { border-color: var(--blue-500); }
+.textarea { height: 96px; padding: var(--space-12); resize: vertical; }
+.invalid { border-color: var(--red-500); }
+.error { margin: 0; font-size: var(--fs-caption); color: var(--red-500); }

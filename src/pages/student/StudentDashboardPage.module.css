@@ -13,3 +13,5 @@
 .greeting { margin: var(--space-12) 0 var(--space-8); font-size: var(--fs-display); font-weight: var(--weight-bold); }
 .bannerSub { margin: 0; font-size: var(--fs-body); opacity: 0.9; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-20); }
+.grid a { color: inherit; text-decoration: none; }
+.grid a:hover { color: var(--blue-500); }

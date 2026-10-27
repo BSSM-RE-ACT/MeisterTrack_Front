@@ -1,0 +1,4 @@
+.summary { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: var(--space-20); }
+.categories { display: flex; flex-direction: column; gap: var(--space-16); }
+.categoryList { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-20); font-size: var(--fs-body-sm); color: var(--text-secondary); }
+.categoryList b { margin-left: var(--space-4); color: var(--teal-600); font-weight: var(--weight-bold); }

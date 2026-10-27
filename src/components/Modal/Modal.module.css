@@ -13,6 +13,8 @@
   background: var(--white);
   border-radius: var(--radius-modal);
   box-shadow: var(--shadow-modal);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
 }
 .title { margin: 0 0 var(--space-16); font-size: var(--fs-h2); font-weight: var(--weight-medium); }
 .body { font-size: var(--fs-body); color: var(--gray-600); }

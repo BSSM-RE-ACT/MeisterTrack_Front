@@ -10,3 +10,6 @@ export const statusTone = {
   조퇴: 'gray',
   결석: 'red',
 } as const satisfies Record<string, BadgeTone>
+
+/** 출결 요약 카드 accent·캘린더 점 색 */
+export const attendanceTone = { 출석: 'blue', 지각: 'amber', 조퇴: 'gray', 결석: 'red' } as const

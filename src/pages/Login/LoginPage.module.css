@@ -1,0 +1,5 @@
+.page { display: flex; align-items: center; justify-content: center; height: 100%; background: var(--bg-page); }
+.card { width: 420px; padding: 48px var(--space-32); text-align: center; }
+.logo { color: var(--blue-500); font-size: var(--fs-display); font-weight: var(--weight-bold); }
+.sub { margin: var(--space-8) 0 var(--space-32); color: var(--text-secondary); font-size: var(--fs-body-sm); }
+.google { width: 100%; }

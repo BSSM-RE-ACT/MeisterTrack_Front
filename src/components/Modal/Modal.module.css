@@ -1,0 +1,20 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal {
+  width: 420px;
+  padding: var(--space-32);
+  background: var(--white);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-modal);
+}
+.title { margin: 0 0 var(--space-16); font-size: var(--fs-h2); font-weight: var(--weight-medium); }
+.body { font-size: var(--fs-body); color: var(--gray-600); }
+.actions { display: flex; gap: var(--space-8); margin-top: var(--space-24); }
+.actions > * { flex: 1; height: 44px; }

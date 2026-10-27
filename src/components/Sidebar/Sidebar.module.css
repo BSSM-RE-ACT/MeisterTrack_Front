@@ -1,0 +1,70 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--sidebar-width);
+  height: 100%;
+  padding: var(--space-24) var(--space-16);
+  background: var(--white);
+  border-right: 1px solid var(--gray-100);
+}
+.logo {
+  padding: 0 var(--space-12) var(--space-24);
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--blue-500);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-bold);
+}
+.nav { flex: 1; display: flex; flex-direction: column; gap: var(--space-8); padding-top: var(--space-16); overflow-y: auto; }
+.group { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-12);
+  border: none;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--gray-600);
+  font-size: var(--fs-body);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+.item:hover { background: var(--gray-50); }
+.active,
+.active:hover { background: var(--blue-50); color: var(--blue-500); }
+.icon { display: inline-flex; width: 22px; height: 22px; align-items: center; justify-content: center; }
+.arrow { margin-left: auto; transition: transform 0.15s; }
+.arrowOpen { transform: rotate(180deg); }
+
+.children { display: flex; flex-direction: column; gap: var(--space-4); }
+.child {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding-left: 34px;
+  border-radius: var(--radius-button);
+  color: var(--gray-500);
+  font-size: var(--fs-body-sm);
+  text-decoration: none;
+}
+.child:hover { background: var(--gray-50); }
+.childActive { color: var(--blue-500); font-weight: var(--weight-medium); }
+
+.logout {
+  height: 44px;
+  padding: 0 var(--space-12);
+  border: none;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--gray-500);
+  font-size: var(--fs-body);
+  text-align: left;
+  cursor: pointer;
+}
+.logout:hover { color: var(--color-danger-hover); background: var(--red-50); }

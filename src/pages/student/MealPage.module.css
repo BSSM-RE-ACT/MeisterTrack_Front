@@ -1,0 +1,19 @@
+.weekNav { display: flex; align-items: center; gap: var(--space-12); font-size: var(--fs-body); }
+.weekNav button {
+  display: inline-flex;
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--gray-500);
+  cursor: pointer;
+}
+.weekNav button:hover { background: var(--white); }
+.grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-16); align-items: start; }
+.today { outline: 2px solid var(--blue-500); }
+.dayHead { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-12); }
+.dayDate { font-size: var(--fs-caption); color: var(--text-muted); }
+.meal { padding: var(--space-12) 0; border-top: 1px solid var(--gray-100); }
+.meal h3 { margin: 0 0 var(--space-8); font-size: var(--fs-body-sm); font-weight: var(--weight-medium); color: var(--amber-700); }
+.meal ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--fs-body-sm); }
+.kcal { margin: var(--space-8) 0 0; font-size: var(--fs-caption); color: var(--text-muted); }

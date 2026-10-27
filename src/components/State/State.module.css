@@ -1,0 +1,7 @@
+.state {
+  padding: var(--space-32) 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--fs-body-sm);
+}
+.error { color: var(--red-500); white-space: pre-line; }

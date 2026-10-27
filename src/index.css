@@ -1,0 +1,37 @@
+@import './styles/fonts.css';
+@import './styles/tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--weight-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+.text-display { font-size: var(--fs-display); font-weight: var(--weight-bold); }
+.text-h1 { font-size: var(--fs-h1); font-weight: var(--weight-bold); }
+.text-h2 { font-size: var(--fs-h2); font-weight: var(--weight-medium); }
+.text-h3 { font-size: var(--fs-h3); font-weight: var(--weight-medium); }
+.text-body { font-size: var(--fs-body); font-weight: var(--weight-light); }
+.text-body-sm { font-size: var(--fs-body-sm); font-weight: var(--weight-light); }
+.text-caption { font-size: var(--fs-caption); font-weight: var(--weight-light); }
+.text-code { font-family: var(--font-mono); font-size: var(--fs-code); }

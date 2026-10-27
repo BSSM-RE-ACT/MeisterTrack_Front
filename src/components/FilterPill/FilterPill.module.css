@@ -1,0 +1,15 @@
+.group { display: flex; flex-wrap: wrap; gap: var(--space-16); }
+.pill {
+  height: 36px;
+  padding: 0 var(--space-16);
+  border-radius: 18px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+.pill:hover { background: var(--gray-50); }
+.selected,
+.selected:hover { background: var(--blue-500); border-color: var(--blue-500); color: var(--white); }

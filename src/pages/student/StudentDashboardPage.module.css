@@ -1,0 +1,15 @@
+.banner {
+  position: relative;
+  min-height: 200px;
+  padding: var(--space-32);
+  border-radius: 16px;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    repeating-linear-gradient(-60deg, rgba(255, 255, 255, 0.14) 0 24px, transparent 24px 56px) right / 45% 100% no-repeat,
+    var(--blue-500);
+}
+.date { margin: 0; font-size: var(--fs-body-sm); opacity: 0.8; }
+.greeting { margin: var(--space-12) 0 var(--space-8); font-size: var(--fs-display); font-weight: var(--weight-bold); }
+.bannerSub { margin: 0; font-size: var(--fs-body); opacity: 0.9; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-20); }

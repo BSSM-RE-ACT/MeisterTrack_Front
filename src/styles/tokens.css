@@ -1,0 +1,124 @@
+/*
+ * BSSM ALL 디자인 토큰 (라이트 모드)
+ * 500 값은 브랜드 확정값. 50~400 / 600~900은 500에서 흰색·검정 혼합으로 만든 임시값이라
+ * Figma Tokens Studio 값을 받으면 그대로 덮어쓴다.
+ */
+:root {
+  --navy-50: #ECEFF2;
+  --navy-100: #DADEE5;
+  --navy-200: #B4BECB;
+  --navy-300: #8A99AE;
+  --navy-400: #506685;
+  --navy-500: #16335C;
+  --navy-600: #132B4E;
+  --navy-700: #0F2440;
+  --navy-800: #0C1C33;
+  --navy-900: #091425;
+
+  --blue-50: #EBF3F9;
+  --blue-100: #D6E7F3;
+  --blue-200: #ADCFE8;
+  --blue-300: #80B4DB;
+  --blue-400: #408FC9;
+  --blue-500: #006AB7;
+  --blue-600: #005A9C;
+  --blue-700: #004A80;
+  --blue-800: #003A65;
+  --blue-900: #002A49;
+
+  --teal-50: #EBF8F8;
+  --teal-100: #D6F1F0;
+  --teal-200: #ADE3E2;
+  --teal-300: #80D4D2;
+  --teal-400: #40BEBB;
+  --teal-500: #00A9A4;
+  --teal-600: #00908B;
+  --teal-700: #007673;
+  --teal-800: #005D5A;
+  --teal-900: #004442;
+
+  --amber-50: #FEF8F0;
+  --amber-100: #FDF1E1;
+  --amber-200: #FBE3C2;
+  --amber-300: #F9D4A0;
+  --amber-400: #F6BE70;
+  --amber-500: #F3A941;
+  --amber-600: #CF9037;
+  --amber-700: #AA762E;
+  --amber-800: #865D24;
+  --amber-900: #61441A;
+
+  --red-50: #FDEFF0;
+  --red-100: #FBDEE0;
+  --red-200: #F7BEC2;
+  --red-300: #F2999F;
+  --red-400: #EC666F;
+  --red-500: #E6333F;
+  --red-600: #C42B36;
+  --red-700: #A1242C;
+  --red-800: #7F1C23;
+  --red-900: #5C1419;
+
+  --gray-50: #F4F5F7;
+  --gray-100: #E9EAEE;
+  --gray-200: #D2D5DE;
+  --gray-300: #B9BECB;
+  --gray-400: #969DB1;
+  --gray-500: #737C97;
+  --gray-600: #626980;
+  --gray-700: #50576A;
+  --gray-800: #3F4453;
+  --gray-900: #2E323C;
+  --white: #FFFFFF;
+
+  /* 의미 색 */
+  --color-pending: var(--amber-500);
+  --color-approved: var(--blue-500);
+  --color-rejected: var(--red-500);
+  --color-positive: var(--teal-500);
+  --color-danger-hover: var(--red-500);
+
+  --bg-page: var(--gray-50);
+  --bg-card: var(--white);
+  --border-default: var(--gray-100);
+  --text-primary: var(--navy-900);
+  --text-secondary: var(--gray-500);
+  --text-muted: var(--gray-400);
+
+  /* 타이포 */
+  --font-sans: 'GmarketSans', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --weight-light: 300;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --fs-display: 28px;
+  --fs-h1: 22px;
+  --fs-h2: 18px;
+  --fs-h3: 15px;
+  --fs-body: 14px;
+  --fs-body-sm: 13px;
+  --fs-caption: 12px;
+  --fs-code: 13px;
+
+  /* 간격 (8px 베이스) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* 레이아웃 */
+  --sidebar-width: 240px;
+  --content-width: 1200px;
+  --header-height: 72px;
+
+  /* 반경 / 그림자 */
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-pill: 12px;
+  --radius-modal: 16px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.16);
+}

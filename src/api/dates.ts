@@ -24,3 +24,14 @@ export function weekdayIndex(d = new Date()): number | null {
 }
 
 export const WEEKDAYS = ['월', '화', '수', '목', '금']
+
+/** 현재 학기 (예: "2026-2"). 8월부터 2학기 */
+export function currentSemester(d = new Date()): string {
+  return `${d.getFullYear()}-${d.getMonth() + 1 >= 8 ? 2 : 1}`
+}
+
+export function monthRange(month: Date): [string, string] {
+  const start = new Date(month.getFullYear(), month.getMonth(), 1)
+  const end = new Date(month.getFullYear(), month.getMonth() + 1, 0)
+  return [toYmd(start), toYmd(end)]
+}

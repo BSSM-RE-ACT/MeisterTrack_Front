@@ -1,0 +1,13 @@
+.layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-24); align-items: start; }
+.tableHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-12); }
+.checkAll { display: inline-flex; align-items: center; gap: var(--space-8); font-size: var(--fs-body-sm); cursor: pointer; }
+.muted { font-size: var(--fs-caption); color: var(--text-muted); }
+.form { display: flex; flex-direction: column; gap: var(--space-16); }
+.cancel {
+  border: none;
+  background: transparent;
+  color: var(--red-500);
+  font-family: inherit;
+  font-size: var(--fs-body-sm);
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { toYm, toYmd, weekdayIndex } from '../../api/dates'
+import { signed } from '../../api/format'
 import { attendanceApi, clubApi, mealApi, meisterApi, mileageApi, timetableApi } from '../../api/endpoints'
 import { useUser } from '../../auth/useAuth'
 import { SummaryCard } from '../../components'
@@ -64,7 +65,7 @@ export function StudentDashboardPage() {
         />
         <SummaryCard
           title="상벌점"
-          value={mileage.data ? formatSigned(mileage.data.summary.total) : '-'}
+          value={mileage.data ? signed(mileage.data.summary.total) : '-'}
           accent="teal"
           actions={[
             mileage.data ? `상점 ${mileage.data.summary.merit} / 벌점 ${mileage.data.summary.demerit}` : '불러오는 중',
@@ -89,8 +90,4 @@ export function StudentDashboardPage() {
       </div>
     </>
   )
-}
-
-function formatSigned(n: number) {
-  return n > 0 ? `+${n}` : String(n)
 }

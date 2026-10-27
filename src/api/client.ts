@@ -34,12 +34,14 @@ function errorMessage(body: unknown, status: number): string {
   return `요청에 실패했습니다 (${status})`
 }
 
-export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+async function request(path: string, init: RequestInit): Promise<Response> {
   const token = tokenStore.get()
+  // FormData는 브라우저가 boundary 포함 Content-Type을 직접 넣어야 한다
+  const isForm = init.body instanceof FormData
   const res = await fetch(`${BASE_URL}${path}`, {
     ...init,
     headers: {
-      'Content-Type': 'application/json',
+      ...(isForm ? {} : { 'Content-Type': 'application/json' }),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...init.headers,
     },
@@ -49,5 +51,15 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     const body = await res.json().catch(() => null)
     throw new ApiError(res.status, errorMessage(body, res.status))
   }
+  return res
+}
+
+export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const res = await request(path, init)
   return res.status === 204 ? (undefined as T) : res.json()
+}
+
+/** 파일 다운로드 응답 */
+export async function apiBlob(path: string): Promise<Blob> {
+  return (await request(path, {})).blob()
 }

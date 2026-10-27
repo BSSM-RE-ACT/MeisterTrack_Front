@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: var(--header-height);
 }
+.searchWrap { position: relative; }
 .search {
   display: flex;
   align-items: center;
@@ -24,7 +25,34 @@
   font-size: var(--fs-body);
   color: var(--text-primary);
 }
+.results,
+.popover {
+  position: absolute;
+  top: 44px;
+  z-index: 20;
+  margin: 0;
+  padding: var(--space-8);
+  border-radius: var(--radius-button);
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+  list-style: none;
+}
+.results { left: 0; width: 360px; }
+.results button {
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  border: none;
+  border-radius: var(--radius-button);
+  background: transparent;
+  font-size: var(--fs-body);
+  text-align: left;
+  cursor: pointer;
+}
+.results button:hover { background: var(--gray-50); }
+.noResult { padding: var(--space-8) var(--space-12); font-size: var(--fs-body-sm); color: var(--text-muted); }
 .right { display: flex; align-items: center; gap: var(--space-20); }
+.bellWrap { position: relative; }
+.popover { right: 0; width: 220px; padding: var(--space-16); font-size: var(--fs-body-sm); color: var(--text-muted); }
 .bell {
   position: relative;
   display: inline-flex;
@@ -34,8 +62,19 @@
   color: var(--gray-500);
   cursor: pointer;
 }
-.dot { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-500); }
-.profile { display: flex; align-items: center; gap: var(--space-12); }
+.profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-4) var(--space-8);
+  border: none;
+  border-radius: var(--radius-button);
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.profile:hover { background: var(--white); }
 .avatar {
   display: flex;
   align-items: center;
@@ -47,5 +86,5 @@
   color: var(--blue-500);
   font-weight: var(--weight-bold);
 }
-.name { font-size: var(--fs-body); font-weight: var(--weight-medium); }
+.name { font-size: var(--fs-body); font-weight: var(--weight-medium); color: var(--text-primary); }
 .subtitle { font-size: var(--fs-caption); color: var(--text-secondary); }

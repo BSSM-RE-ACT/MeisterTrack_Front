@@ -119,15 +119,8 @@ export interface MileageRecord {
   teacher_name: string
 }
 
-export interface ClubDetail {
-  id: number
-  name: string
-  type: '창체' | '자율'
-  description: string
-  room: string | null
-  advisor_name: string | null
-  member_count: number
-  members: { student: User; role: '부장' | '부원' }[]
+export interface ClubDetail extends Club {
+  members: { student: User; role: ClubRole }[]
 }
 
 export interface SchoolEvent {
@@ -138,4 +131,72 @@ export interface SchoolEvent {
   grade: number | null
   memo: string | null
   source: 'neis' | 'school'
+}
+
+export interface StudentScoreRow {
+  student: User
+  total: number
+  scores: Record<MeisterCategory, number>
+  pending: number
+}
+
+export interface StudentMileage {
+  student: User
+  summary: MileageSummary
+}
+
+export type ClubType = '창체' | '자율'
+export type ClubRole = '부장' | '부원'
+
+export interface Club {
+  id: number
+  name: string
+  type: ClubType
+  description: string
+  room: string | null
+  advisor_id: number | null
+  advisor_name: string | null
+  member_count: number
+}
+
+export interface ClubActivity {
+  id: number
+  date: string
+  title: string
+  content: string
+}
+
+export interface AfterSchoolCourse {
+  id: number
+  name: string
+  description: string
+  weekday: number
+  start_time: string
+  end_time: string
+  room: string | null
+  capacity: number
+  semester: string
+  is_open: boolean
+  teacher_name: string
+  enrolled: number
+  enrolled_by_me: boolean
+}
+
+export type CourseInput = Omit<AfterSchoolCourse, 'id' | 'teacher_name' | 'enrolled' | 'enrolled_by_me'>
+
+export interface SubmissionInput {
+  category: MeisterCategory
+  item: string
+  title: string
+  content: string
+  attachment_url?: string | null
+  acquired_at?: string | null
+}
+
+export interface EventInput {
+  title: string
+  start_date: string
+  end_date: string
+  grade: number | null
+  memo: string | null
 }

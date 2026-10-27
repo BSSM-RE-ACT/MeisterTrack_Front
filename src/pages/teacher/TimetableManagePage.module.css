@@ -1,0 +1,16 @@
+.controls { display: flex; align-items: center; gap: var(--space-8); }
+.cell { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 0 var(--space-8); }
+.cell:focus-within { background: var(--blue-50); }
+.subject,
+.teacher {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  text-align: center;
+}
+.subject { font-size: var(--fs-body); font-weight: var(--weight-medium); color: var(--text-primary); }
+.teacher { font-size: var(--fs-caption); color: var(--text-secondary); }
+.subject::placeholder,
+.teacher::placeholder { color: var(--gray-200); }

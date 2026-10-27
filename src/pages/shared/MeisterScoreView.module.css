@@ -1,0 +1,11 @@
+.card { display: flex; flex-direction: column; gap: var(--space-16); }
+.total { display: flex; align-items: center; justify-content: space-between; padding-bottom: var(--space-16); border-bottom: 1px solid var(--gray-100); }
+.totalValue { font-size: var(--fs-display); font-weight: var(--weight-bold); color: var(--blue-500); }
+.category { padding: var(--space-16); border: 1px solid var(--gray-100); border-radius: var(--radius-card); }
+.categoryHead { display: flex; align-items: center; gap: var(--space-8); margin-bottom: var(--space-12); }
+.grade { margin-left: auto; font-size: var(--fs-body-sm); color: var(--gray-500); }
+.empty { margin: 0; font-size: var(--fs-body-sm); color: var(--text-muted); }
+.items { display: flex; flex-direction: column; gap: var(--space-12); margin: 0; padding: 0; list-style: none; }
+.itemHead { display: flex; justify-content: space-between; font-size: var(--fs-body); font-weight: var(--weight-medium); }
+.details { margin: var(--space-4) 0 0; padding-left: var(--space-16); font-size: var(--fs-body-sm); color: var(--blue-600); }
+.details span { color: var(--gray-500); }

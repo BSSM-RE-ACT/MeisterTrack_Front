@@ -35,7 +35,7 @@ export function Sidebar({ items, onLogout }: SidebarProps) {
 
 function SingleItem({ item }: { item: SidebarItem }) {
   return (
-    <NavLink to={item.to!} end className={({ isActive }) => `${styles.item} ${isActive ? styles.active : ''}`}>
+    <NavLink to={item.to!} end={item.to!.split('/').length <= 2} className={({ isActive }) => `${styles.item} ${isActive ? styles.active : ''}`}>
       <span className={styles.icon}>{item.icon}</span>
       {item.label}
     </NavLink>

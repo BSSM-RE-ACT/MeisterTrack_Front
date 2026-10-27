@@ -1,13 +1,12 @@
 /*
  * BSSM ALL 디자인 토큰 (라이트 모드)
- * 500 값은 브랜드 확정값. 50~400 / 600~900은 500에서 흰색·검정 혼합으로 만든 임시값이라
- * Figma Tokens Studio 값을 받으면 그대로 덮어쓴다.
+ * 컬러는 Figma Tokens Studio "BMO Found" global 값과 동일하게 유지한다.
  */
 :root {
-  --navy-50: #ECEFF2;
-  --navy-100: #DADEE5;
-  --navy-200: #B4BECB;
-  --navy-300: #8A99AE;
+  --navy-50: #E8EBEF;
+  --navy-100: #CCD2DB;
+  --navy-200: #A6B1C1;
+  --navy-300: #7F8FA5;
   --navy-400: #506685;
   --navy-500: #16335C;
   --navy-600: #132B4E;
@@ -15,10 +14,10 @@
   --navy-800: #0C1C33;
   --navy-900: #091425;
 
-  --blue-50: #EBF3F9;
-  --blue-100: #D6E7F3;
-  --blue-200: #ADCFE8;
-  --blue-300: #80B4DB;
+  --blue-50: #E6F0F8;
+  --blue-100: #C7DEEF;
+  --blue-200: #9EC6E4;
+  --blue-300: #73ADD7;
   --blue-400: #408FC9;
   --blue-500: #006AB7;
   --blue-600: #005A9C;
@@ -26,10 +25,10 @@
   --blue-800: #003A65;
   --blue-900: #002A49;
 
-  --teal-50: #EBF8F8;
-  --teal-100: #D6F1F0;
-  --teal-200: #ADE3E2;
-  --teal-300: #80D4D2;
+  --teal-50: #E6F6F6;
+  --teal-100: #C7ECEB;
+  --teal-200: #9EDEDC;
+  --teal-300: #73D0CD;
   --teal-400: #40BEBB;
   --teal-500: #00A9A4;
   --teal-600: #00908B;
@@ -37,10 +36,10 @@
   --teal-800: #005D5A;
   --teal-900: #004442;
 
-  --amber-50: #FEF8F0;
-  --amber-100: #FDF1E1;
-  --amber-200: #FBE3C2;
-  --amber-300: #F9D4A0;
+  --amber-50: #FEF6EC;
+  --amber-100: #FCECD5;
+  --amber-200: #FADEB7;
+  --amber-300: #F8D096;
   --amber-400: #F6BE70;
   --amber-500: #F3A941;
   --amber-600: #CF9037;
@@ -48,21 +47,21 @@
   --amber-800: #865D24;
   --amber-900: #61441A;
 
-  --red-50: #FDEFF0;
-  --red-100: #FBDEE0;
-  --red-200: #F7BEC2;
-  --red-300: #F2999F;
+  --red-50: #FCEBEC;
+  --red-100: #FAD2D5;
+  --red-200: #F6B1B6;
+  --red-300: #F18F95;
   --red-400: #EC666F;
   --red-500: #E6333F;
   --red-600: #C42B36;
   --red-700: #A1242C;
-  --red-800: #7F1C23;
+  --red-800: #7E1C23;
   --red-900: #5C1419;
 
-  --gray-50: #F4F5F7;
-  --gray-100: #E9EAEE;
-  --gray-200: #D2D5DE;
-  --gray-300: #B9BECB;
+  --gray-50: #F1F2F5;
+  --gray-100: #E0E2E8;
+  --gray-200: #CACDD7;
+  --gray-300: #B2B7C6;
   --gray-400: #969DB1;
   --gray-500: #737C97;
   --gray-600: #626980;

@@ -17,3 +17,4 @@
 .meal h3 { margin: 0 0 var(--space-8); font-size: var(--fs-body-sm); font-weight: var(--weight-medium); color: var(--amber-700); }
 .meal ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--fs-body-sm); }
 .kcal { margin: var(--space-8) 0 0; font-size: var(--fs-caption); color: var(--text-muted); }
+.allergy { margin-left: var(--space-4); font-size: var(--fs-caption); color: var(--text-muted); cursor: help; }

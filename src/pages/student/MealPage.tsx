@@ -9,6 +9,12 @@ import styles from './MealPage.module.css'
 
 const MEAL_TYPES = ['조식', '중식', '석식'] as const
 
+// NEIS 알레르기 번호 (1~19)
+const ALLERGENS = [
+  '난류', '우유', '메밀', '땅콩', '대두', '밀', '고등어', '게', '새우', '돼지고기',
+  '복숭아', '토마토', '아황산류', '호두', '닭고기', '쇠고기', '오징어', '조개류', '잣',
+]
+
 export function MealPage() {
   const [base, setBase] = useState(() => new Date())
   const [monday, friday] = weekRange(base)
@@ -61,7 +67,14 @@ export function MealPage() {
                     <h3>{type}</h3>
                     <ul>
                       {meal.dishes.map((dish) => (
-                        <li key={dish.name}>{dish.name}</li>
+                        <li key={dish.name}>
+                          {dish.name}
+                          {dish.allergies.length > 0 && (
+                            <span className={styles.allergy} title={dish.allergies.map((n) => ALLERGENS[n - 1]).join(', ')}>
+                              {dish.allergies.join('.')}
+                            </span>
+                          )}
+                        </li>
                       ))}
                     </ul>
                     {meal.calories && <p className={styles.kcal}>{meal.calories}</p>}

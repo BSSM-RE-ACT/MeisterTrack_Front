@@ -200,3 +200,20 @@ export interface EventInput {
   grade: number | null
   memo: string | null
 }
+
+export interface Classification {
+  category: MeisterCategory
+  item: string
+  reason: string
+}
+
+export interface ReviewAssist {
+  summary: string
+  checks: string[]
+  suggested_score: number
+  score_reason: string
+  similar: { id: number; title: string; item: string; score: number }[]
+  score_min: number | null
+  score_max: number | null
+  score_avg: number | null
+}

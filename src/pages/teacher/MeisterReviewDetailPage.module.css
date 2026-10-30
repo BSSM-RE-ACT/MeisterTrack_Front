@@ -25,3 +25,17 @@
 .attachment { color: var(--blue-600); font-size: var(--fs-body-sm); }
 .actions { display: flex; justify-content: flex-end; gap: var(--space-8); margin-top: var(--space-24); }
 .modalBody { display: flex; flex-direction: column; gap: var(--space-16); }
+
+/* AI 심사 보조 카드: 헤더 버튼 높이 40, 요약 박스 blue-50 padding 16 radius 8 */
+.aiHeader { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); margin-bottom: var(--space-16); }
+.aiButton { display: inline-flex; align-items: center; gap: var(--space-4); }
+.ai { display: flex; flex-direction: column; gap: var(--space-16); }
+.aiSummary { margin: 0; padding: var(--space-16); border-radius: var(--radius-button); background: var(--blue-50); color: var(--gray-800); white-space: pre-wrap; }
+.aiChecks { margin: 0; padding-left: 20px; font-size: var(--fs-body-sm); color: var(--gray-700); display: flex; flex-direction: column; gap: var(--space-4); }
+.aiScore { display: flex; align-items: center; gap: var(--space-16); padding: var(--space-16); border: 1px solid var(--border-default); border-radius: var(--radius-button); }
+.aiReason { flex: 1; font-size: var(--fs-body-sm); display: flex; flex-direction: column; gap: var(--space-4); }
+.aiSimilar { list-style: none; margin: var(--space-8) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-8); font-size: var(--fs-body-sm); }
+.aiSimilar li { display: flex; justify-content: space-between; gap: var(--space-12); }
+.aiSimilar a { color: var(--blue-600); text-decoration: none; }
+.aiSimilar span { color: var(--text-muted); flex-shrink: 0; }
+.aiNote { font-size: var(--fs-caption); color: var(--text-muted); }

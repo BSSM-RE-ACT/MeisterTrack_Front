@@ -17,48 +17,54 @@ interface TableProps<T> {
   empty?: ReactNode
 }
 
+// 폭을 정하지 않은 컬럼의 최소 폭. 창이 좁으면 표 안에서 가로 스크롤된다.
+const FLEX_MIN = 120
+
 // 헤더 40 / 행 48 / 구분선 1px gray-100. 컬럼 간격은 셀 좌우 패딩 12px.
 export function Table<T>({ columns, rows, rowKey, onRowClick, empty = '데이터가 없습니다' }: TableProps<T>) {
+  const minWidth = columns.reduce((sum, col) => sum + (col.width ?? FLEX_MIN), 0)
   return (
-    <table className={styles.table}>
-      <colgroup>
-        {columns.map((col) => (
-          <col key={col.key} style={col.width ? { width: col.width } : undefined} />
-        ))}
-      </colgroup>
-      <thead>
-        <tr>
+    <div className={styles.scroll}>
+      <table className={styles.table} style={{ minWidth }}>
+        <colgroup>
           {columns.map((col) => (
-            <th key={col.key} className={col.align === 'center' ? styles.center : undefined}>
-              {col.header}
-            </th>
+            <col key={col.key} style={col.width ? { width: col.width } : undefined} />
           ))}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.length === 0 ? (
+        </colgroup>
+        <thead>
           <tr>
-            <td colSpan={columns.length} className={styles.empty}>
-              {empty}
-            </td>
+            {columns.map((col) => (
+              <th key={col.key} className={col.align === 'center' ? styles.center : undefined} title={col.header}>
+                {col.header}
+              </th>
+            ))}
           </tr>
-        ) : (
-          rows.map((row) => (
-            <tr
-              key={rowKey(row)}
-              className={onRowClick ? styles.clickable : undefined}
-              onClick={onRowClick ? () => onRowClick(row) : undefined}
-            >
-              {columns.map((col) => (
-                <td key={col.key} className={col.align === 'center' ? styles.center : undefined}>
-                  {col.render(row)}
-                </td>
-              ))}
+        </thead>
+        <tbody>
+          {rows.length === 0 ? (
+            <tr>
+              <td colSpan={columns.length} className={styles.empty}>
+                {empty}
+              </td>
             </tr>
-          ))
-        )}
-      </tbody>
-    </table>
+          ) : (
+            rows.map((row) => (
+              <tr
+                key={rowKey(row)}
+                className={onRowClick ? styles.clickable : undefined}
+                onClick={onRowClick ? () => onRowClick(row) : undefined}
+              >
+                {columns.map((col) => (
+                  <td key={col.key} className={col.align === 'center' ? styles.center : undefined}>
+                    {col.render(row)}
+                  </td>
+                ))}
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

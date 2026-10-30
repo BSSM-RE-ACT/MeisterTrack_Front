@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { meisterApi } from '../../api/endpoints'
+import { Sparkles } from 'lucide-react'
+import { aiApi, meisterApi } from '../../api/endpoints'
 import { MEISTER_CATEGORIES, type Submission, type SubmissionInput } from '../../api/types'
 import { useUser } from '../../auth/useAuth'
 import {
@@ -50,6 +51,14 @@ export function MeisterPage() {
     },
   })
   const cancel = useMutation({ mutationFn: meisterApi.cancel, onSuccess: refresh })
+  const classify = useMutation({
+    mutationFn: () => aiApi.classify(form.title, form.content),
+    onSuccess: ({ category, item }) => setForm((prev) => ({ ...prev, category, item })),
+  })
+  const openForm = () => {
+    classify.reset()
+    setOpen(true)
+  }
 
   const columns: Column<Submission>[] = [
     { key: 'created_at', header: '신청일', width: 110, render: (s) => s.created_at.slice(0, 10) },
@@ -83,7 +92,7 @@ export function MeisterPage() {
 
   return (
     <>
-      <PageHeader title="마이스터역량인증제" actions={<Button onClick={() => setOpen(true)}>인증 신청</Button>} />
+      <PageHeader title="마이스터역량인증제" actions={<Button onClick={openForm}>인증 신청</Button>} />
       {score.isLoading ? <Loading /> : score.error ? <ErrorState error={score.error} /> : score.data && <MeisterScoreView score={score.data} />}
 
       <Card variant="table">
@@ -110,6 +119,23 @@ export function MeisterPage() {
         }
       >
         <div className={styles.form}>
+          <div className={styles.ai}>
+            <div className={styles.aiText}>
+              {classify.data
+                ? `AI 추천: ${classify.data.category} · ${classify.data.item} — ${classify.data.reason}`
+                : classify.error
+                  ? classify.error.message
+                  : '제목과 내용을 쓰고 누르면 카테고리와 세부 항목을 채워 드려요'}
+            </div>
+            <Button
+              variant="secondary"
+              className={styles.aiButton}
+              disabled={!form.title.trim() || classify.isPending}
+              onClick={() => classify.mutate()}
+            >
+              <Sparkles size={16} /> {classify.isPending ? '분석 중…' : 'AI 추천'}
+            </Button>
+          </div>
           <Select
             label="카테고리"
             value={form.category}

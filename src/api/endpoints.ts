@@ -3,6 +3,7 @@ import type {
   AfterSchoolCourse,
   AttendanceRecord,
   AttendanceStatus,
+  Classification,
   Club,
   ClubActivity,
   ClubDetail,
@@ -16,6 +17,7 @@ import type {
   MileageSummary,
   MonthlyAttendance,
   Page,
+  ReviewAssist,
   ReviewSummary,
   SchoolEvent,
   StudentMileage,
@@ -92,6 +94,11 @@ export const meisterApi = {
   reject: (id: number, memo: string) => api<SubmissionWithStudent>(`/meister/submissions/${id}/reject`, post({ memo })),
   scores: (filter: ClassFilter) => api<StudentScoreRow[]>(`/meister/scores${query({ ...filter })}`),
   score: (studentId: number) => api<StudentScore>(`/meister/scores/${studentId}`),
+}
+
+export const aiApi = {
+  classify: (title: string, content: string) => api<Classification>('/ai/classify', post({ title, content })),
+  review: (submissionId: number) => api<ReviewAssist>(`/ai/review/${submissionId}`),
 }
 
 export interface AttendanceInput {
